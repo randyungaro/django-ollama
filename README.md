@@ -80,10 +80,10 @@ The LLM's response will appear in the chat history.
    └── README.md
 
 
-License
+**License**
 MIT License
 
-Acknowledgements
+**Acknowledgements**
 This project uses Ollama for local LLM interaction.
 The Llama 3 model is used by default.
 
