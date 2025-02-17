@@ -24,31 +24,32 @@ This project demonstrates how to build a simple chat application using Django an
    ```bash
    git clone [https://github.com/YOUR_GITHUB_USERNAME/django-ollama.git](https://www.google.com/search?q=https://github.com/YOUR_GITHUB_USERNAME/django-ollama.git)  # Replace with your repo URL
    cd django-ollama
+   
 2. **Set up the Ollama container:**
 
-```bash
-docker pull ollama/ollama
-docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
-docker exec -it ollama ollama run llama3  # Or any other Ollama-compatible model
+   ```bash
+   docker pull ollama/ollama
+   docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+   docker exec -it ollama ollama run llama3  # Or any other Ollama-compatible model
 
 Note: You can replace llama3 with the name of any other model you have downloaded using ollama pull <model_name>.
 
 3. **Create a virtual environment:**
 
-```bash
-python3 -m venv env
-source env/bin/activate  # On Linux/macOS
-env\Scripts\activate  # On Windows
+   ```bash
+   python3 -m venv env
+   source env/bin/activate  # On Linux/macOS
+   env\Scripts\activate  # On Windows
 
 4. **Install dependencies:**
 
-```bash
-pip install django ollama
+   ```bash
+   pip install django ollama
 
 5. **Run the Django development server:**
 
-```bash
-python manage.py runserver
+   ```bash
+   python manage.py runserver
 
 6. **Access the application:**
 
@@ -60,22 +61,23 @@ Type your message in the input box.
 Click the "Send" button.
 The LLM's response will appear in the chat history.
 
-
+   
 **Project Structure**
-django-ollama/
-├── ollamachat/        # Django project
-│   ├── chat/        # Django app
-│   │   ├── templates/
-│   │   │   └── chat.html
-│   │   ├── views.py
-│   │   ├── urls.py
-│   │   └── ollama_api.py
-│   ├── ollamachat/
-│   │   ├── settings.py
-│   │   ├── urls.py
-│   │   └── wsgi.py
-│   └── manage.py
-└── README.md
+   ```bash
+   django-ollama/
+   ├── ollamachat/        # Django project
+   │   ├── chat/        # Django app
+   │   │   ├── templates/
+   │   │   │   └── chat.html
+   │   │   ├── views.py
+   │   │   ├── urls.py
+   │   │   └── ollama_api.py
+   │   ├── ollamachat/
+   │   │   ├── settings.py
+   │   │   ├── urls.py
+   │   │   └── wsgi.py
+   │   └── manage.py
+   └── README.md
 
 
 License
