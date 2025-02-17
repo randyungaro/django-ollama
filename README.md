@@ -63,21 +63,21 @@ The LLM's response will appear in the chat history.
 
    
 **Project Structure**
-   ```bash
-   django-ollama/
-   ├── ollamachat/        # Django project
-   │   ├── chat/        # Django app
-   │   │   ├── templates/
-   │   │   │   └── chat.html
-   │   │   ├── views.py
-   │   │   ├── urls.py
-   │   │   └── ollama_api.py
-   │   ├── ollamachat/
-   │   │   ├── settings.py
-   │   │   ├── urls.py
-   │   │   └── wsgi.py
-   │   └── manage.py
-   └── README.md
+         ```bash
+         django-ollama/
+         ├── ollamachat/        # Django project
+         │   ├── chat/        # Django app
+         │   │   ├── templates/
+         │   │   │   └── chat.html
+         │   │   ├── views.py
+         │   │   ├── urls.py
+         │   │   └── ollama_api.py
+         │   ├── ollamachat/
+         │   │   ├── settings.py
+         │   │   ├── urls.py
+         │   │   └── wsgi.py
+         │   └── manage.py
+         └── README.md
 
 
 **License**
