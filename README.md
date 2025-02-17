@@ -26,31 +26,28 @@ This project demonstrates how to build a simple chat application using Django an
    cd django-ollama
 2. **Set up the Ollama container:**
 
-Bash
-
+```bash
 docker pull ollama/ollama
 docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
 docker exec -it ollama ollama run llama3  # Or any other Ollama-compatible model
+
 Note: You can replace llama3 with the name of any other model you have downloaded using ollama pull <model_name>.
 
 3. **Create a virtual environment:**
 
-Bash
-
+```bash
 python3 -m venv env
 source env/bin/activate  # On Linux/macOS
 env\Scripts\activate  # On Windows
 
 4. **Install dependencies:**
 
-Bash
-
+```bash
 pip install django ollama
 
 5. **Run the Django development server:**
 
-Bash
-
+```bash
 python manage.py runserver
 
 6. **Access the application:**
