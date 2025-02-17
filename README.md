@@ -22,7 +22,7 @@ This project demonstrates how to build a simple chat application using Django an
 1. **Clone the repository:**
 
    ```bash
-   git clone [https://github.com/YOUR_GITHUB_USERNAME/django-ollama.git](https://www.google.com/search?q=https://github.com/YOUR_GITHUB_USERNAME/django-ollama.git)  # Replace with your repo URL
+   git clone https://github.com/randyungaro/django-ollama.git  # Replace with your repo URL
    cd django-ollama
    
 2. **Set up the Ollama container:**
