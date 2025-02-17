@@ -1,0 +1,111 @@
+body {
+    font-family: sans-serif;
+    margin: 0; /* Remove default body margin */
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0); /* Subtle gradient background */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+}
+
+#chat-container {
+    flex-grow: 1; /* Allow chat container to expand and fill available space */
+    padding: 20px;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    max-width: 800px; /* Set a maximum width for the chat container */
+    margin: 20px auto; /* Center the chat container horizontally */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 16px;
+    max-width: 70%; /* Adjust message width */
+    clear: both;
+    opacity: 0; /* Initially hide messages */
+    transform: translateY(20px); /* Initially move messages down */
+    animation: fadeInUp 0.5s ease-out forwards; /* Apply fade-in animation */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user {
+    background-color: #e9f5db; /* Lighter green for user */
+    text-align: right;
+    float: right;
+    border: 1px solid #c8e6c9; /* Add a border to user messages */
+}
+
+.ai {
+    background-color: #fff;
+    text-align: left;
+    float: left;
+    border: 1px solid #eee;
+}
+
+#input-area {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Softer shadow for input area */
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none; /* Remove focus outline */
+}
+
+button {
+    padding: 12px 18px;
+    background-color: #4285f4; /* Google blue */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    outline: none; /* Remove focus outline */
+}
+
+button:hover {
+    background-color: #357ae8; /* Darker blue on hover */
+}
+
+/* Hide scrollbar but keep functionality */
+#chat-container::-webkit-scrollbar {
+    width: 0.5em; /* Adjust scrollbar width */
+}
+
+#chat-container::-webkit-scrollbar-track {
+    background: transparent; /* Make track transparent */
+}
+
+#chat-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2); /* Semi-transparent thumb */
+    border-radius: 4px;
+}
+
+#chat-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3); /* Slightly darker thumb on hover */
+}
+
+/* Optional: Style the placeholder text */
+#user-input::placeholder {
+    color: #aaa;
+}

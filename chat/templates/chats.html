@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Chat App</title>
+    <link rel="stylesheet" href="{% static 'chat/chat2.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="messages-container" id="chat-container">
+            <div class="empty-chat">
+                Start a conversation...
+            </div>
+        </div>
+        
+        <form id="chat-form">
+            <div class="input-container">
+                <textarea 
+                    id="user-input" 
+                    class="chat-input" 
+                    placeholder="Type your message..."
+                    rows="1"
+                    required
+                    autofocus
+                ></textarea>
+                <button type="submit" class="send-button">Send</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Remove empty chat message when first message is sent
+            function removeEmptyChat() {
+                $('.empty-chat').remove();
+            }
+
+            // Auto-resize textarea
+            $('#user-input').on('input', function() {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+            });
+
+            // Scroll to bottom
+            function scrollToBottom() {
+                const container = $("#chat-container");
+                container.scrollTop(container[0].scrollHeight);
+            }
+
+            $("#chat-form").submit(function (event) {
+                event.preventDefault();
+                var userInput = $("#user-input").val();
+                $("#user-input").val("");
+                $("#user-input").css('height', 'auto'); // Reset height
+
+                removeEmptyChat();
+
+                // Append user message
+                $("#chat-container").append(
+                    "<div class='message user-message'>" + userInput + "</div>"
+                );
+
+                var aiMessageDiv = $("<div class='message bot-message'></div>");
+                $("#chat-container").append(aiMessageDiv);
+
+                scrollToBottom();
+
+                $.ajax({
+                    type: "POST",
+                    url: "/chat/",
+                    data: { user_input: userInput },
+                    xhrFields: {
+                        onprogress: function (xhr) {
+                            var response = xhr.target.responseText;
+                            aiMessageDiv.html(response);
+                            scrollToBottom();
+                        }
+                    },
+                });
+            });
+        });
+    </script>
+</body>
+</html>
