@@ -57,6 +57,9 @@ Open your web browser and go to http://127.0.0.1:8000/chat/ to interact with the
 
 7. **Usage:**
 
+![django-chat](https://github.com/user-attachments/assets/05fa4768-b1d4-4880-b1cb-99b8c86c2686)
+
+
 Type your message in the input box.
 Click the "Send" button.
 The LLM's response will appear in the chat history.
