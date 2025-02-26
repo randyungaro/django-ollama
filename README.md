@@ -22,7 +22,7 @@ This project demonstrates how to build a simple chat application using Django an
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/randyungaro/django-ollama.git  # Replace with your repo URL
+   git clone https://github.com/randyungaro/django-ollama.git  
    cd django-ollama
    
 2. **Set up the Ollama container:**
@@ -73,5 +73,6 @@ MIT License
 
 **Acknowledgements**
 This project uses Ollama for local LLM interaction.
+
 The Llama 3 model is used by default.
 
